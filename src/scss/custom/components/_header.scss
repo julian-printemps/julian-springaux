@@ -1,0 +1,44 @@
+/*
+ * Header
+ */
+.header {
+  position: relative;
+  width: 100%;
+  color: $color-white;
+  padding: 0;
+  z-index: 1010;
+
+  &--holder {
+    position: relative;
+    background-color: $background-dark;
+    border-bottom: 1px solid $color-black;
+  }
+}
+
+.site_title {
+  margin: 0;
+  padding: rem-calc(2px) 0 rem-calc(6px) rem-calc(50px);
+  @include fts(12,12);
+
+  &--link {
+    text-decoration: none;
+    color: $color-white;
+    font-weight: normal;
+  }
+
+  &--name {
+    display: block;
+    @include ftsAutoLine(16);
+		font-weight: bold;
+  }
+}
+
+.logo {
+  position: absolute;
+  width: rem-calc(40px);
+  height: rem-calc(40px);
+  top: 0;
+  left: 0;
+  background-image: url('../images/logo.png');
+  background-repeat: no-repeat;
+}

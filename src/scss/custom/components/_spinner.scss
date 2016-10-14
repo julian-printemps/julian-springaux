@@ -1,0 +1,201 @@
+/*
+ * Spinner
+ */
+
+
+.skills-container {
+  width: 100%;
+  float: none;
+}
+
+.spinner-container {
+  display: none;
+}
+
+@media only screen and (min-width: 400px) {
+  .skills-container {
+    width: calc(100% - 130px);
+    float: left;
+  }
+
+  .spinner-container {
+    display: block;
+    width: 320px;
+    zoom: 0.4;
+    position: relative;
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .skills-container {
+    width: calc(100% - 250px);
+  }
+
+  .spinner-container {
+    width: 340px;
+    zoom: 0.7;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .skills-container {
+    width: calc(100% - 400px);
+  }
+
+  .spinner-container {
+    zoom: 1;
+  }
+}
+
+.spinner-holder {
+  margin: 10% auto;
+}
+
+.spinner-content {
+  position: absolute;
+}
+
+.spinner1 {
+  font-size: 4rem;
+  top: 130px;
+  left: 127px;
+}
+.spinner2 {
+  font-size: 10rem;
+  top: 80px;
+  left: 80px;
+}
+.spinner3 {
+  font-size: 15rem;
+  top: 42px;
+  left: 40px;
+}
+.spinner4 {
+  font-size: 20rem;
+}
+.spinner5 {
+  font-size: 7rem;
+  top: 105px;
+  left: 104px;
+}
+
+.spinner {
+  color: #126073;
+}
+
+
+/* icons */
+.icon-spinner1:before,
+.icon-spinner2:before,
+.icon-spinner3:before,
+.icon-spinner4:before,
+.icon-spinner5:before {
+  content: "\f1ce";
+  font-family: 'fontawesome-webfont';
+}
+
+/* webkit */
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotatingBis {
+    from{
+        -webkit-transform: rotate(360deg);
+    }
+    to{
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+/* firefox */
+@-moz-keyframes rotating {
+    from{
+        -moz-transform: rotate(0deg);
+    }
+    to{
+        -moz-transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rotatingBis {
+    from{
+        -moz-transform: rotate(360deg);
+    }
+    to{
+        -moz-transform: rotate(0deg);
+    }
+}
+
+/* opera */
+@-o-keyframes rotating {
+    from{
+        -o-transform: rotate(0deg);
+    }
+    to{
+        -o-transform: rotate(360deg);
+    }
+}
+@-o-keyframes rotatingBis {
+    from{
+        -o-transform: rotate(360deg);
+    }
+    to{
+        -o-transform: rotate(0deg);
+    }
+}
+
+/* default */
+@keyframes rotating {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotatingBis {
+    from{
+        transform: rotate(360deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+
+
+
+.spinner1.rotating {
+    -webkit-animation: rotating 1.5s linear infinite;
+    -moz-animation: rotating 1.5s linear infinite;
+    -o-animation: rotating 1.5s linear infinite;
+    animation: rotating 1.5s linear infinite;
+}
+.spinner2.rotating {
+    -webkit-animation: rotatingBis 3s linear infinite;
+    -moz-animation: rotating 3s linear infinite;
+    -o-animation: rotating 3s linear infinite;
+    animation: rotating 3s linear infinite;
+}
+.spinner3.rotating {
+    -webkit-animation: rotating 8s linear infinite;
+    -moz-animation: rotating 8s linear infinite;
+    -o-animation: rotating 8s linear infinite;
+    animation: rotating 8s linear infinite;
+}
+.spinner4.rotating {
+    -webkit-animation: rotatingBis 7s linear infinite;
+    -moz-animation: rotating 7s linear infinite;
+    -o-animation: rotating 75s linear infinite;
+    animation: rotating 7s linear infinite;
+}
+.spinner5.rotating {
+    -webkit-animation: rotating 20s linear infinite;
+    -moz-animation: rotating 20s linear infinite;
+    -o-animation: rotating 20s linear infinite;
+    animation: rotating 20s linear infinite;
+}

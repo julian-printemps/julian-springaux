@@ -1,0 +1,79 @@
+/*
+ * Buttons
+ */
+
+.perspective {
+  position: relative;
+  margin: 0;
+  padding: 1em;
+  z-index: 1;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+  display: inline-block;
+}
+
+.skill_button {
+  display: block;
+  outline: 1px solid transparent;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background: $color-deep-blue;
+  padding: 0.8rem 2.2rem;
+  color: $color-white;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:before {
+    position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	left: 0;
+  	top: 100%;
+  	background: $color-white;
+  	color: $color-deep-blue;
+    text-align: center;
+    padding-top: 10px;
+  	font-family: 'fontawesome-webfont';
+    font-size: rem-calc(20px);
+  	-webkit-transform-origin: 0% 0%;
+  	-webkit-transform: rotateX(-90deg);
+  	-moz-transform-origin: 0% 0%;
+  	-moz-transform: rotateX(-90deg);
+  	-ms-transform-origin: 0% 0%;
+  	-ms-transform: rotateX(-90deg);
+  	transform-origin: 0% 0%;
+  	transform: rotateX(-90deg);
+
+    .lvl_25 & {
+      content: '\f005 \f006 \f006 \f006';
+    }
+    .lvl_50 & {
+      content: '\f005 \f005 \f006 \f006';
+    }
+    .lvl_75 & {
+      content: '\f005 \f005 \f005 \f006';
+    }
+    .lvl_100 & {
+      content: '\f005 \f005 \f005 \f005';
+    }
+  }
+
+
+
+
+  &:hover  {
+  	background: #aaa;
+  	-webkit-transform-origin: 50% 0%;
+  	-webkit-transform: rotateX(90deg) translateY(-100%);
+  	-moz-transform-origin: 50% 0%;
+  	-moz-transform: rotateX(90deg) translateY(-100%);
+  	-ms-transform-origin: 50% 0%;
+  	-ms-transform: rotateX(90deg) translateY(-100%);
+  	transform-origin: 50% 0%;
+  	transform: rotateX(90deg) translateY(-100%);
+  }
+
+}

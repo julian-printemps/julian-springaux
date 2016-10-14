@@ -1,0 +1,73 @@
+/*
+ * Block
+ */
+
+
+// Video
+.video-holder {
+  opacity: 0.3;
+  position: absolute;
+
+  @media screen and #{breakpoint(medium)} {
+    padding: 2px 0 6px;
+  }
+}
+
+// Start Contact
+.contact {
+
+  &--holder {
+    width: 100%;
+    padding: 6px 0 10px;
+    color: $color-white;
+    display: block;
+
+    @media screen and #{breakpoint(xsmall)} {
+      float: left;
+    }
+  }
+
+  &--list {
+    padding: 0;
+    margin: 0;
+  }
+
+  &--listitem {
+    display: inline-block;
+    list-style: none;
+    padding: 0px 14px 0 0;
+    text-align: center;
+  }
+
+  &--link {
+    display: block;
+    color: $color-white;
+    width: 44px;
+    height: 47px;
+    padding-bottom: 2px;
+
+    -webkit-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+    -moz-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+    -ms-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+    -o-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+    transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+
+    &:hover {
+      color: $theme-blue;
+      padding-bottom: 0px;
+      border-bottom: 2px solid $theme-blue;
+
+      -webkit-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+      -moz-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+      -ms-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+      -o-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+      transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+    }
+
+    &-icon {
+      font-size: 2rem;
+      top: 7px;
+    }
+  }
+}
+// End Contact
