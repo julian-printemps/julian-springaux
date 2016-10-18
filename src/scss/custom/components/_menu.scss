@@ -51,10 +51,11 @@
     @include setTransition(color);
 
     &:hover, &:active, &:focus {
-      padding: rem-calc(12px) 0 rem-calc(12px);
+      padding: rem-calc(14px) 0 rem-calc(11px);
       color: $theme-blue;
       border-bottom: rem-calc(3px) solid $theme-blue;
       @include setTransition(color);
+      margin-bottom: -1px;
     }
 
     @media screen and #{breakpoint(medium)} {
@@ -62,14 +63,6 @@
       border-bottom: none;
     }
 
-    @media screen and #{breakpoint(xmedium)} {
-      padding: 3px 0 9px;
-
-      &:hover {
-        padding: 3px 0 8px;
-        margin-bottom: -2px;
-      }
-    }
   }
 
   &--button-holder {

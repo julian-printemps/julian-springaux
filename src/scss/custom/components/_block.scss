@@ -7,10 +7,6 @@
 .video-holder {
   opacity: 0.3;
   position: absolute;
-
-  @media screen and #{breakpoint(medium)} {
-    padding: 2px 0 6px;
-  }
 }
 
 // Start Contact
@@ -18,13 +14,9 @@
 
   &--holder {
     width: 100%;
-    padding: 6px 0 10px;
+    padding: rem-calc(6px) 0 rem-calc(10px);
     color: $color-white;
     display: block;
-
-    @media screen and #{breakpoint(xsmall)} {
-      float: left;
-    }
   }
 
   &--list {
@@ -35,38 +27,26 @@
   &--listitem {
     display: inline-block;
     list-style: none;
-    padding: 0px 14px 0 0;
+    padding: 0 1rem 0 0;
     text-align: center;
   }
 
   &--link {
     display: block;
     color: $color-white;
-    width: 44px;
-    height: 47px;
+    width: rem-calc(44px);
+    height: rem-calc(47px);
     padding-bottom: 2px;
+    @include setTransition;
 
-    -webkit-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
-    -moz-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
-    -ms-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
-    -o-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
-    transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
-
-    &:hover {
+    &:hover, &:active, &:focus {
       color: $theme-blue;
-      padding-bottom: 0px;
-      border-bottom: 2px solid $theme-blue;
-
-      -webkit-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
-      -moz-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
-      -ms-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
-      -o-transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
-      transition: 150ms cubic-bezier(0.250, 0.250, 0.750, 0.750) color;
+      @include setTransition;
     }
 
-    &-icon {
+    &--icon {
       font-size: 2rem;
-      top: 7px;
+      top: rem-calc(7px);
     }
   }
 }

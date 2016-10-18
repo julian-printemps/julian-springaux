@@ -1,10 +1,10 @@
   <script src="<?php echo get_template_directory_uri(); ?>/bower_components/foundation-sites/dist/foundation.min.js"></script>
 
-  <!--
-  <script src="<?php echo get_template_directory_uri(); ?>/js/min/app.js"></script>
-  -->
-  <script src="http://localhost:8888/Julian-code/julian-web/src/js/app.js"></script>
 
+  <script src="<?php echo get_template_directory_uri(); ?>/js/min/app.js"></script>
+  <!--
+  <script src="http://localhost:8888/Julian-code/julian-web/src/js/app.js"></script>
+  -->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -48,8 +48,16 @@
   // list end
 
 
+  // category
+  &--category {
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+  }
+
   // content
   &--content {
+
     &--title {
       margin: 0;
       color: $color-black;
@@ -120,14 +128,13 @@
 
   &--title {
     text-align: center;
-    padding: 40px 0;
+    padding: 4rem 0;
     border-bottom: 1px solid $color-gray;
     border-top: 1px solid $color-gray;
 
     &-content {
       display: inline-block;
-      padding: 2rem;
-      padding: 10px 50px;
+      padding: 1rem 4rem;
       background: rgba(0,0,0,0.9);
       color: $color-white;
     }
@@ -146,7 +153,7 @@
     }
 
     @media screen and #{breakpoint(medium)} {
-      padding: 100px 0;
+      padding: 2rem 0;
     }
 
     @media screen and #{breakpoint(superlarge)} {
@@ -169,63 +176,36 @@
   // about me
   &.aboutme {
     position: relative;
-    max-height: 300px;
-    overflow: hidden;
-    background-color: #126073;
+    background-color: $color-deep-blue;
+  }
 
-    @media screen and #{breakpoint(medium)} {
-      position: relative;
-      overflow: hidden;
-      background: #126073;
-    }
+  .aboutme & {
 
-    & .section--title {
-      font-size: 1.6rem;
+    &--title {
+      color: $color-white;
+      @include fts(20, 20);
       text-align: left;
+      padding: 1rem;
+
+      @media screen and #{breakpoint(medium)} {
+        @include fts(24, 24);
+        padding: 2rem;
+      }
     }
 
-    & .section--intro {
+    &--inner {
+      color: $color-white;
+      background: rgba(0,0,0,0.8);
+      padding: 2rem 3rem;
+    }
+
+    &--intro {
 
       & p {
-        margin: 2% 0 14px;
-        font-size: 1rem;
-        line-height: 1.1rem;
-
-        @media screen and #{breakpoint(medium)} {
-          margin: 2% 0 4%
-        }
+        padding: 1rem 0;
+        @include fts(16, 20);
       }
 
-      &-holder {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0,0,0,0.8);
-        max-width: 80%;
-        margin: 5% auto;
-        padding: 2% 4%;
-        color: $color-white;
-
-        @media screen and #{breakpoint(medium)} {
-          max-width: 50%;
-          padding: 2em 3em;
-          margin: 0 auto;
-          margin-left: 5%;
-          top: inherit;
-          left: inherit;
-          right: inherit;
-
-          .no-js & {
-            position: relative;
-          }
-        }
-
-        @media screen and #{breakpoint(  superlarge)} {
-          margin-left: 0;
-        }
-      }
     }
   }
 }

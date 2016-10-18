@@ -5,11 +5,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julian Springaux | Web engineer</title>
-    <!--
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo julian_getCssAssets(); ?>">
-    -->
-    <link rel="stylesheet" href="http://localhost:8888/Julian-code/julian-web/src/css/app.css">
 
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo julian_getCssAssets(); ?>">
+    <!--
+    <link rel="stylesheet" href="http://localhost:8888/Julian-code/julian-printemps/src/css/app.css">
+    -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic">
 
     <?php wp_head(); ?>
@@ -49,7 +49,7 @@
                 </li>
                 <li class="navigation--listitem">
                   <a href="#skills" class="navigation--link">
-                    <i class="fa fa-cog fa-spin fa-fw"></i>
+                    <i class="fa fa-cog"></i>
                     <span class="navigation--title">Skills</span>
                   </a>
                 </li>

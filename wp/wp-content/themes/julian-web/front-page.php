@@ -23,24 +23,23 @@ get_header();
     ?>
     <?php } ?>
 
-    <canvas id="demo-canvas" width="1810" height="905"></canvas>
+  <!--  <canvas id="demo-canvas" width="1810" height="905"></canvas> -->
 
     <div class="section--holder row">
-      <div class="section--intro-holder columns">
+      <div class="section--inner columns small-12 medium-6">
         <h2 class="section--title"><?php echo $about_title; ?></h2>
 
         <div class="section--intro">
           <p><?php echo $about_description; ?></p>
 
           <div id="contact--holder" class="contact--holder">
-            <p><?php echo $contact_title; ?></p>
             <ul class="contact--list">
 
               <?php if ($contact_mail) { ?>
                 <li class="mail contact--listitem">
                   <a class="contact--link" href="#" title="mail" data-content="<?php echo $contact_mail; ?>">
-                    <span class="contact--link-text seo">Mail address</span>
-                    <i class="contact--link-icon icon-mail"></i>
+                    <span class="contact--link--text seo">e-mail</span>
+                    <i class="contact--link--icon fa fa-envelope"></i>
                   </a>
                 </li>
               <?php } ?>
@@ -48,8 +47,8 @@ get_header();
               <?php if ($contact_phone) { ?>
                 <li class="phone contact--listitem">
                   <a class="contact--link" href="#" id="phone" title="phone" data-content="<?php echo $contact_phone; ?>">
-                    <span class="contact--link-text seo">Phone</span>
-                    <i class="contact--link-icon icon-phone"></i>
+                    <span class="contact--link--text seo">Phone</span>
+                    <i class="contact--link--icon fa fa-phone"></i>
                   </a>
                 </li>
               <?php } ?>
@@ -57,8 +56,8 @@ get_header();
               <?php if ($contact_twitter) { ?>
                 <li class="twitter contact--listitem">
                   <a class="contact--link" href="<?php echo $contact_twitter; ?>" title="Twitter">
-                    <span class="contact--link-text seo">Twitter</span>
-                    <i class="contact--link-icon icon-twitter"></i>
+                    <span class="contact--link--text seo">Twitter</span>
+                    <i class="contact--link--icon fa fa-twitter"></i>
                   </a>
                 </li>
               <?php } ?>
@@ -66,8 +65,8 @@ get_header();
               <?php if ($contact_linkedin) { ?>
                 <li class="linkedin contact--listitem">
                   <a class="contact--link" href="<?php echo $contact_linkedin; ?>" title="Linkedin">
-                    <span class="contact--link-text seo">Linkedin</span>
-                    <i class="contact--link-icon icon-linkedin"></i>
+                    <span class="contact--link--text seo">Linkedin</span>
+                    <i class="contact--link--icon fa fa-linkedin"></i>
                   </a>
                 </li>
               <?php } ?>
