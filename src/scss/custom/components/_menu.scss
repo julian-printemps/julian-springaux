@@ -3,13 +3,25 @@
  */
 
 .navigation {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 44px;
+  background-color: #333;
+  border-bottom: 1px solid #000;
+
+
 
   @media screen and #{breakpoint(xmedium)} {
     display: block;
+    position: relative;
+    width: auto;
+    top: 0;
+    background-color: transparent;
+    border: none;
   }
 
   &--holder {
-    display: none;
     padding: 0;
     border-top: 1px solid $color-black;
     background: $color-gray-medium;
@@ -25,7 +37,8 @@
   &--list {
     margin: 0;
     padding: 0 0 0 5%;
-    text-align: right;
+    text-align: center;
+
 
     @media screen and #{breakpoint(xmedium)} {
       text-align: left;
@@ -37,6 +50,10 @@
     margin-right: 20px;
     padding: 0;
 
+    &.menu_lang {
+      text-align: right;
+    }
+
     @media screen and #{breakpoint(medium)} {
       display: inline-block;
       float: right;
@@ -46,16 +63,20 @@
   &--link {
     display: block;
     color: $color-white;
-    padding: rem-calc(14px) 0 rem-calc(13px);
+    padding: 8px 0 10px;
     border-bottom: rem-calc(1px) solid $color-black;
     @include setTransition(color);
 
     &:hover, &:active, &:focus {
-      padding: rem-calc(14px) 0 rem-calc(11px);
       color: $theme-blue;
-      border-bottom: rem-calc(3px) solid $theme-blue;
+      border-bottom: rem-calc(1px) solid $theme-blue;
       @include setTransition(color);
-      margin-bottom: -1px;
+
+      @media screen and #{breakpoint(xmedium)} {
+        padding: 8px 0 8px;
+        border-bottom: rem-calc(3px) solid $theme-blue;
+        margin-bottom: -1px;
+      }
     }
 
     @media screen and #{breakpoint(medium)} {
@@ -68,10 +89,11 @@
   &--button-holder {
     position: absolute;
     right: 0;
-    top: -6px;
-    width: 40px;
-    height: 40px;
+    top: 0;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
+    text-align: center;
 
     @media screen and #{breakpoint(xmedium)} {
       display: none;
@@ -87,15 +109,77 @@
   }
 
   &--menu-icon {
+    position: relative;
     display: inline-block;
-    top: 8px;
+    top: 7px;
     bottom: 0;
-    right: 0;
-    left: 6px;
-    font-size: 1.5rem;
+    left: 0;
+    font-size: 2rem;
 
     @media screen and #{breakpoint(xmedium)} {
       display: none;
     }
   }
+}
+
+
+/*
+** Language
+*/
+.menu-lang-container {
+  display: inline-block;
+
+  @media screen and #{breakpoint(xmedium)} {
+    padding-left: 1rem;
+    border-left: 1px solid $color-white;
+  }
+
+  & .menu .navigation--link_lang {
+    position: relative;
+    display: block;
+    padding: 8px 0 10px 1.3rem;
+
+    & a {
+      display: inline-block;
+      padding: 0;
+      color: $color-white;
+      @include setTransition(color);
+
+      &:before {
+        position: absolute;
+        top: calc(50% - 9px);
+        left: 0;
+        content: '\f1ab';
+        color: $color-white;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        @include setTransition(color);
+      }
+    }
+
+    &:hover, &:active, &:focus {
+      & a {
+        color: $theme-blue;
+        @include setTransition(color);
+
+        &:before {
+          color: $theme-blue;
+          @include setTransition(color);
+        }
+      }
+    }
+  }
+}
+
+
+#wpadminbar {
+  display: none;
+}
+
+html.js {
+    margin-top: 0 !important;
 }

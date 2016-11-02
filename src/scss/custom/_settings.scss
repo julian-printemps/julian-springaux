@@ -4,8 +4,13 @@
 
 $color-white: #fff;
 $color-black: #000;
+
 $color-gray: #333;
 $color-gray-medium: #1D1D1D;
+
+$color-grey: #e6e6e6;
+$color-grey-lighter: lighten($color-grey, 5);
+$color-grey-darker: darken($color-grey, 5);
 
 $background-dark: $color-gray;
 

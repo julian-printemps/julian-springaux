@@ -2,119 +2,99 @@
  * Flip
  */
 
-.flip-container {
-  margin: 10px auto;
-}
-
-.flip-container h3 {
-  margin: 0 0 10px;
-}
-
-@media only screen and (min-width: 340px) {
-  .flip-container {
-    float: left;
-    margin: 4px;
-  }
-}
-
-@media only screen and (min-width: 500px) {
-  .flip-container {
-    margin: 10px;
-  }
-}
-
-.flip-container {
-  position: relative;
-
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -ms-perspective: 1000;
-  perspective: 1000;
-  -ms-transform: perspective(1000px);
+.flip {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 0.6s;
+  -moz-transition: 0.6s;
   -moz-transform: perspective(1000px);
   -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
 
-  width: 150px;
-  height: 160px;
-  z-index: 100;
-}
-
-    .active  .flip-container .flip-card {
-        -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        transform: rotateY(180deg);
-    }
-
-        .active .flip-container {
-            z-index: 100;
-        }
-
-    .flip-card {
-        width: 100%;
-        height: 100%;
-
-        -webkit-transition: 0.6s;
-        -webkit-transform-style: preserve-3d;
-        -ms-transition: 0.6s;
-        -moz-transition: 0.6s;
-        -moz-transform: perspective(1000px);
-        -moz-transform-style: preserve-3d;
-        -ms-transform-style: preserve-3d;
-        transition: 0.6s;
-        transform-style: preserve-3d;
-
-        cursor: pointer;
-    }
-
-    .face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: #126073;
-      border: 1px solid $color-gray;
-
-      -webkit-backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-      -ms-backface-visibility: hidden;
-      backface-visibility: hidden;
-      -webkit-transition: 0.6s;
-      -webkit-transform-style: preserve-3d;
-
-      -moz-transform-style: preserve-3d;
-      -o-transition: 0.6s;
-      -o-transform-style: preserve-3d;
-      -ms-transition: 0.6s;
-      -ms-transform-style: preserve-3d;
-      transition: 0.6s;
-      transform-style: preserve-3d;
-
-      color: #f0f0f0;
-    }
-
-  .flip-container:hover .face {
-    background-color: #1C7E96;
+  .active & {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
   }
 
+  &--holder {
+    display: block;
+  }
 
-    .face.front {
-        -webkit-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-        background-repeat: no-repeat;
+  // Container
+  &--container {
+    position: relative;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    -ms-transform: perspective(1000px);
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    width: 100%;
+    height: auto;
+    z-index: 100;
+
+    .active & {
+      z-index: 100;
+    }
+  }
+  // Container end
+
+
+  // face
+  &--face {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: $color-grey;
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+
+    -moz-transform-style: preserve-3d;
+    -o-transition: 0.6s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 0.6s;
+    -ms-transform-style: preserve-3d;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    color: #f0f0f0;
+
+    &.front {
+      position: absolute;
+      height: 100%;
+      -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      background-repeat: no-repeat;
+
+      &:hover {
+        background-color: $color-grey-darker;
+      }
+
+      .active & {
+          background-image: none;
+          background-color: $color-white;
+          -webkit-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
+          -moz-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
+          -ms-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
+          -o-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
+          transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
+      }
     }
 
-        .active .face.front {
-            background-image: none;
-            background-color: $color-white;
-            border: 1px solid $color-gray;
-            -webkit-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
-            -moz-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
-            -ms-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
-            -o-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
-            transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
-        }
-
-    .face.back {
+    &.back {
         display: block;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -126,29 +106,34 @@
         -ms-transform: rotateY(-180deg);
         transform: rotateY(-180deg);
 
-        padding: 10% 0;
+        padding: 2rem;
         text-align: center;
-        background-color: #1C7E96;
-        border: 1px solid $color-gray;
-        color: $color-white;
+        background-color: $color-white;
+        color: $color-gray;
+        fill: $color-gray;
     }
 
-      .face.back:hover {
-        background-color: #126073;
-      }
-
-    .face-title {
-      text-align: center;
-      margin: 3em 0;
-      font-size: 2rem;
+    &:hover {
+      background-color: $color-grey-lighter;
     }
 
-    .face-listElem {
-      list-style-type: none;
-      text-align: left;
-    }
 
-    .face-listLink {
-      color: $color-white;
-      font-size: 1rem;
+  }
+  // face end
+
+  &--title {
+    text-align: left;
+    margin: 0 0 1rem;
+    font-size: 2rem;
+  }
+
+  &--list {
+    text-align: left;
+    padding: 0 1rem 0 1.5rem;
+
+    &--item {
+      list-style-type: disc;
     }
+  }
+
+}

@@ -18,7 +18,7 @@
   // list
   &--list {
     margin: 0;
-    padding: 20px 0;
+    padding: 1rem;
   }
 
   &--listitem {
@@ -132,28 +132,46 @@
     border-bottom: 1px solid $color-gray;
     border-top: 1px solid $color-gray;
 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .experience & {
+      background-image: url(../images/slide2-bg.jpg);
+    }
+    .skills & {
+      background-image: url(../images/slide1-bg.jpg);
+    }
+    .education & {
+      background-image: url(../images/slide3-bg.jpg);
+    }
+    .interests & {
+      background-image: url(../images/slide4-bg.jpg);
+    }
+
+    @media screen and #{breakpoint(medium)} {
+      padding: 2rem 0;
+      background-image: none;
+
+      .experience & {
+        background: url(../images/slide2-bg.jpg) center 0 no-repeat fixed;
+      }
+      .skills & {
+        background: url(../images/slide1-bg.jpg) center 0 no-repeat fixed;
+      }
+      .education & {
+        background: url(../images/slide3-bg.jpg) center 0 no-repeat fixed;
+      }
+      .interests & {
+        background: url(../images/slide4-bg.jpg) center 0 no-repeat fixed;
+      }
+    }
+
     &-content {
       display: inline-block;
       padding: 1rem 4rem;
       background: rgba(0,0,0,0.9);
       color: $color-white;
-    }
-
-    .experience & {
-      background: url(../images/slide2-bg.jpg) center 0 no-repeat fixed;
-    }
-    .skills & {
-      background: url(../images/slide1-bg.jpg) center 0 no-repeat fixed;
-    }
-    .education & {
-      background: url(../images/slide3-bg.jpg) center 0 no-repeat fixed;
-    }
-    .interests & {
-      background: url(../images/slide4-bg.jpg) center 0 no-repeat fixed;
-    }
-
-    @media screen and #{breakpoint(medium)} {
-      padding: 2rem 0;
     }
 
     @media screen and #{breakpoint(superlarge)} {

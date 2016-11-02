@@ -33,8 +33,11 @@
 
         <div class="columns">
           <div class="navigation--holder">
-            <nav class="navigation">
+            <nav id="navigation" class="navigation">
               <ul class="navigation--list clearfix">
+                <li class="navigation--listitem menu_lang">
+                  <?php wp_nav_menu(array('theme_location' => 'lang_menu')); ?>
+                </li>
                 <li class="navigation--listitem">
                   <a href="#hobbies" class="navigation--link">
                     <i class="navigation--icon fa fa-cube" aria-hidden="true"></i>
@@ -63,8 +66,12 @@
             </nav>
           </div>
 
-          <div id="navigation--button" class="navigation--button-holder">
-            <i class="navigation--menu-icon icon-menu"></i>
+          <div class="navigation--button-holder" data-responsive-toggle="navigation">
+            <button id="navigation--button" type="button" name="button" data-toggle>
+              <i class="navigation--menu-icon fa fa-bars"></i>
+            </button>
+          </div>
+
           </div>
         </div>
       </header>

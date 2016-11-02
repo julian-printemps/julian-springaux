@@ -37,7 +37,7 @@ function get_ID_by_slug($page_slug) {
 /*
  * Lang menu
  */
-add_action('init', 'graspp_add_menu');
+add_action('init', 'julian_add_menu');
 function julian_add_menu()
 {
     register_nav_menu('lang_menu', 'Lang');

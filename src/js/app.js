@@ -26,6 +26,20 @@ $( document ).ready(function() {
   });
 
 
+  $( ".perspective" ).each(function() {
+    $( ".perspective" ).click(function() {
+      $(this).toggleClass( "active" );
+    });
+  });
+
+  // $( ".perspective" ).click(function() {
+  //   // $( ".perspective" ).each(function(){
+  //   //   $(this).toggleClass( "active" );
+  //   // });
+  //   $(this).toggleClass( "active" );
+  // });
+
+
   /* Smooth Scroll */
   $('.navigation--link').click(function(){
     var speed = 800;
@@ -40,8 +54,8 @@ $( document ).ready(function() {
 
   var mail = $( ".mail a" ).attr('data-content');
   var phone = $( "#phone" ).attr('data-content');
-  $( ".mail a" ).attr('href', mail);
-  $( "#phone" ).attr('href', phone);
+  $( ".mail a" ).attr('href', 'mailto:'+mail);
+  $( "#phone" ).attr('href', 'tel:'+phone);
 
 
 });
