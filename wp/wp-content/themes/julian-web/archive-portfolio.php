@@ -1,6 +1,7 @@
 <?php
 get_header();
 ?>
+<?php get_template_part( 'includes/default-header' ); ?>
 <div class="wrapper">
 
   <main role="main" id="main">

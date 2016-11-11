@@ -14,6 +14,8 @@ get_header();
 // $detect = new Mobile_Detect;
 // $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'mobile') : 'computer');
 ?>
+<?php get_template_part( 'includes/front-header' ); ?>
+
 <div class="wrapper">
 
 <!-- aboutme section -->
