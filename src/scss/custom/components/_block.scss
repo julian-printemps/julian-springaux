@@ -51,3 +51,105 @@
   }
 }
 // End Contact
+
+
+
+
+/*
+** Portfolio
+*/
+.portfolio {
+
+
+  &--list {
+    margin-top: 2rem;
+
+    &--item {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-grey;
+      }
+    }
+
+
+  }
+
+  &--title {
+    @include ftsAutoLine(26);
+    font-weight: bold;
+  }
+
+  &--link {
+    display: block;
+    color: $theme-text;
+    margin-top: 1rem;
+    @include setTransition;
+
+    &:hover, &:focus, &:active {
+      color: $theme-blue;
+      @include setTransition;
+    }
+  }
+
+  &--tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid $theme-blue;
+    color: $theme-blue;
+    @include ftsAutoLine(12);
+
+    &--list {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+
+      @media screen and #{breakpoint(medium)} {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &--description {
+    @include ftsAutoLine(14);
+    color: $theme-text;
+  }
+
+  // image
+  &--figure {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    max-height: 250px;
+  }
+
+  &--image {
+    width: 100%;
+
+    @media screen and #{breakpoint(medium)} {
+      width: auto;
+      opacity: 1;
+      @include setTransition;
+
+      &:hover {
+        opacity: 0.8;
+        @include setTransition;
+      }
+    }
+  }
+}
+
+
+/*
+** pagination
+*/
+.pagination {
+  &--holder {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}

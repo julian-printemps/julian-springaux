@@ -20,10 +20,27 @@ $post_type = 'julian_interest';
 		?>
 		<div class="row">
 			<?php while ( $interests_query->have_posts() ) : $interests_query->the_post(); ?>
-				<a title="<?php echo the_title(); ?>" class="cell flip--holder columns small-10 small-offset-1 medium-4 medium-offset-0">
+				<?php
+				switch ($post->post_name) {
+					case 'travel':
+						$icon_slug = 'plane';
+						break;
+					case 'litterature':
+						$icon_slug = 'book';
+						break;
+					case 'interest':
+						$icon_slug = 'cubes';
+						break;
+				}
+				?>
+				<a title="<?php echo the_title(); ?>" class="cell flip--holder columns small-12 medium-4">
 					<div class="flip--container">
 					  <div class="flip">
-					    <div class="front flip--face"><span class="interestsIcon icon-<?php echo $tax_term->slug; ?>"></span></div>
+					    <div class="front flip--face">
+								<div class="flip--icon--holder">
+									<i class="flip--icon fa fa-<?php echo $icon_slug; ?>" aria-hidden="true"></i>
+								</div>
+							</div>
 					    <div class="back flip--face">
 								<h3 class="flip--title"><?php echo the_title(); ?></h3>
 								<ul class="flip--list">

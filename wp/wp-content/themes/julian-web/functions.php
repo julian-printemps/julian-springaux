@@ -155,7 +155,7 @@ function create_post_type() {
 	);
 
 	// Portfolio
-	register_post_type( 'julian_portfolio',
+	register_post_type( 'portfolio',
     array(
       'labels' => array(
         'name' => __( 'Portfolio' ),
@@ -168,7 +168,7 @@ function create_post_type() {
 	// Add Portfolio category
 	register_taxonomy(
 		'portfolio-cat',
-		'julian_portfolio',
+		'portfolio',
 		array(
 			'hierarchical' => true,
 			'update_count_callback' => '_update_post_term_count',

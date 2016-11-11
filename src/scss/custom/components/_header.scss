@@ -35,10 +35,11 @@
 
 .logo {
   position: absolute;
-  width: rem-calc(40px);
-  height: rem-calc(40px);
+  width: rem-calc(46px);
+  height: rem-calc(46px);
+  margin-bottom: -1px;
   top: 0;
   left: 0;
-  background-image: url('../images/logo.png');
-  background-repeat: no-repeat;
+  // background-image: url('../images/logo.png');
+  // background-repeat: no-repeat;
 }

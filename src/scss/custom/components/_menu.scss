@@ -12,7 +12,7 @@
 
 
 
-  @media screen and #{breakpoint(xmedium)} {
+  @media screen and #{breakpoint(large)} {
     display: block;
     position: relative;
     width: auto;
@@ -27,7 +27,7 @@
     background: $color-gray-medium;
     margin-top: 1px;
 
-    @media screen and #{breakpoint(xmedium)} {
+    @media screen and #{breakpoint(large)} {
       display: block !important;
       border-top: none;
       background: transparent;
@@ -57,6 +57,10 @@
     @media screen and #{breakpoint(medium)} {
       display: inline-block;
       float: right;
+      font-size: 14px;
+    }
+    @media screen and #{breakpoint(xmedium)} {
+      font-size: 1rem;
     }
   }
 
@@ -72,7 +76,7 @@
       border-bottom: rem-calc(1px) solid $theme-blue;
       @include setTransition(color);
 
-      @media screen and #{breakpoint(xmedium)} {
+      @media screen and #{breakpoint(medium)} {
         padding: 8px 0 8px;
         border-bottom: rem-calc(3px) solid $theme-blue;
         margin-bottom: -1px;
@@ -95,7 +99,7 @@
     cursor: pointer;
     text-align: center;
 
-    @media screen and #{breakpoint(xmedium)} {
+    @media screen and #{breakpoint(large)} {
       display: none;
     }
 
@@ -103,7 +107,7 @@
       color: $theme-blue;
     }
 
-    @media screen and #{breakpoint(xmedium)} {
+    @media screen and #{breakpoint(large)} {
       display: none;
     }
   }
@@ -116,7 +120,7 @@
     left: 0;
     font-size: 2rem;
 
-    @media screen and #{breakpoint(xmedium)} {
+    @media screen and #{breakpoint(large)} {
       display: none;
     }
   }
