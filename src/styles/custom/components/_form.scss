@@ -1,0 +1,146 @@
+.text_form {
+  position: relative;
+  text-align: left;
+  margin-top: rem-calc(20);
+  padding-left: rem-calc(10);
+  padding-right: rem-calc(10);
+  @include fts(14,24);
+
+  @include medium {
+    @include fts(16,26);
+  }
+
+  & .robotic { display: none; }
+  
+  &--headline {
+    margin-bottom: rem-calc(40);
+    @include fts(16,26);
+
+    @include medium {
+      @include fts(18,28);
+    }
+  }
+
+  & [type='text'], & [type='password'], & [type='date'], & [type='datetime'], & [type='datetime-local'],
+  & [type='month'], & [type='week'], & [type='email'], & [type='number'], & [type='search'], & [type='tel'],
+  & [type='time'], & [type='url'], & [type='color'] {
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid $grey_01;
+    width: auto;
+    box-shadow: none;
+    background-color: transparent;
+    color: $black;
+    font-weight: bold;
+    @include fts(14,24);
+
+    @include medium {
+      @include fts(16,26);
+    }
+  }
+
+  & select {
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid $grey_01;
+    width: auto;
+    box-shadow: none;
+    background-color: transparent;
+    color: $black;
+    font-weight: bold;
+    @include fts(14,24);
+
+    @include medium {
+      @include fts(16,26);
+    }
+  }
+
+  & textarea {
+    display: block;
+    width: 100%;
+    margin-top: rem-calc(20);
+    border: none;
+    border-bottom: 1px solid $grey_01;
+    box-shadow: none;
+    background-color: transparent;
+    color: $black;
+    @include fts(14,24);
+
+    @include medium {
+      @include fts(16,26);
+    }
+  }
+
+  & .no_break {
+    white-space: nowrap;
+  }
+
+
+  /*
+  ** placeholder
+  */
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    color: $gray_02;
+  }
+  input::-moz-placeholder,
+  textarea::-moz-placeholder {
+    color: $gray_02;
+  }
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    color: $gray_02;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: $gray_02;
+  }
+
+  /*
+  ** icon
+  */
+  & .quote {
+    position: absolute;
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+
+    @include medium {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &--holder {
+      position: relative;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+
+      @include medium {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    &.left {
+      top: 0;
+      left: 0;
+    }
+
+    &.right {
+      bottom: 2rem;
+      right: 0;
+    }
+
+    & .icon {
+      fill: $gray_02;
+      width: 0.75rem;
+      height: 0.75rem;
+
+      @include medium {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+
+}

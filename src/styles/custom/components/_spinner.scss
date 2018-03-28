@@ -1,0 +1,47 @@
+.spinner {
+  position: relative;
+  width: rem-calc(50);
+  height: rem-calc(50);
+
+  &--holder {
+    position: absolute;
+    width: rem-calc(50);
+    height: rem-calc(50);
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+  }
+
+  & .icon, & .icon_small, & .icon_2 {
+    position: absolute;
+    width: rem-calc(50);
+    height: rem-calc(50);
+    animation: spinneranime 2s infinite ease-in-out;
+
+    display: block;
+    border: 2px solid $black;
+    border-radius: 50%;
+  }
+
+
+  & .icon_small {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  & .icon_2 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+
+}
+
+@keyframes spinneranime {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}

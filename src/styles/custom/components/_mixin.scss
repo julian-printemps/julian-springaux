@@ -1,0 +1,295 @@
+@mixin fts($fts, $lin: 24) {
+  $linS: $lin / $fts;
+  font-size: #{$fts}px;
+  font-size: rem-calc($fts);
+  line-height: $linS;
+}
+
+@mixin letter-spacing($sizeValue: .08){
+  letter-spacing: ($sizeValue * 10) + px; // rem未対応ブラウザのfallback
+  letter-spacing: $sizeValue + rem;
+}
+
+@mixin line-height($sizeValue: 1.3){
+  line-height: ($sizeValue * 10) + px; // rem未対応ブラウザのfallback
+  line-height: $sizeValue + rem;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+
+@mixin ellipsis($ellipsis: 1) {
+  overflow: hidden;
+  width: 100%;
+  > * {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $ellipsis;
+  }
+}
+
+@mixin box-sizing($type) {
+ -webkit-box-sizing:$type;
+ -moz-box-sizing:$type;
+ box-sizing:$type;
+}
+
+
+
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -o-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin rotate($deg) {
+  -moz-transform: rotate(#{$deg}deg);
+  -webkit-transform: rotate(#{$deg}deg);
+  -o-transform: rotate(#{$deg}deg);
+  -ms-transform: rotate(#{$deg}deg);
+  transform: rotate(#{$deg}deg);
+}
+
+@mixin vertical-text() {
+  -moz-writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -o-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+@mixin setTransition($property: all) {
+  -webkit-transition: $property 0.2s ease-in-out;
+  -moz-transition: $property 0.2s ease-in-out;
+  -ms-transition: $property 0.2s ease-in-out;
+  -o-transition: $property 0.2s ease-in-out;
+  transition: $property 0.2s ease-in-out;
+}
+
+@mixin setTransitionSlow($property: all) {
+  -webkit-transition: $property 1s ease-in-out;
+  -moz-transition: $property 1s ease-in-out;
+  -ms-transition: $property 1s ease-in-out;
+  -o-transition: $property 1s ease-in-out;
+  transition: $property 1s ease-in-out;
+}
+
+@mixin setTransitionMedium($property: all) {
+  -webkit-transition: $property 0.5s ease-in-out;
+  -moz-transition: $property 0.5s ease-in-out;
+  -ms-transition: $property 0.5s ease-in-out;
+  -o-transition: $property 0.5s ease-in-out;
+  transition: $property 0.5s ease-in-out;
+}
+
+@mixin setTransitionContent($property: all) {
+  -webkit-transition: $property 1s ease-in-out;
+  -moz-transition: $property 1s ease-in-out;
+  -ms-transition: $property 1s ease-in-out;
+  -o-transition: $property 1s ease-in-out;
+  transition: $property 1s ease-in-out;
+}
+
+
+@mixin setBlurTransition() {
+  -webkit-transition: all 1.5s ease-in-out;
+  -moz-transition: all 1.5s ease-in-out;
+  -ms-transition: all 1.5s ease-in-out;
+  -o-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
+@mixin filter-blur($val) {
+  filter: blur(#{$val}px) brightness(0.9);
+  -webkit-filter: blur(#{$val}px) brightness(0.9);
+  -moz-filter: blur(#{$val}px) brightness(0.9);
+  -o-filter: blur(#{$val}px) brightness(0.9);
+  -ms-filter: blur(#{$val}px) brightness(0.9);
+}
+
+@mixin filter-blur-brightness($val) {
+  filter: blur(#{$val}px) brightness(0.7);
+  -webkit-filter: blur(#{$val}px) brightness(0.7);
+  -moz-filter: blur(#{$val}px) brightness(0.7);
+  -o-filter: blur(#{$val}px) brightness(0.7);
+  -ms-filter: blur(#{$val}px) brightness(0.7);
+}
+
+@mixin translateZ($px) {
+  -webkit-transform: translateZ($px);
+  -moz-transform: translateZ($px);
+  -ms-transform: translateZ($px);
+  -o-transform: translateZ($px);
+  transform: translateZ($px);
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+@mixin animation($animation-name) {
+  -webkit-animation: $animation-name;
+  -moz-animation: $animation-name;
+  -ms-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+@mixin setLinkColor($color, $color-hover: $color) {
+  color: $color;
+  fill: $color;
+  @include setTransition;
+
+  &:hover, &:active, &:focus {
+    color: $color-hover;
+    fill: $color-hover;
+    @include setTransition;
+  }
+}
+
+@mixin opacity($opacity) { // @include opacity(0.5);
+  opacity: $opacity;
+  $opacityIE: $opacity * 100;
+  filter: alpha(opacity=$opacityIE);
+}
+
+@mixin gradient($start-color, $end-color, $orientation)
+ {
+ background: $start-color;
+ @if $orientation == vertical
+ {
+ // vertical
+ background: -moz-linear-gradient(top,  $start-color 0%, $end-color 100%);
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
+ background: -webkit-linear-gradient(top,  $start-color 0%,$end-color 100%);
+ background: -o-linear-gradient(top,  $start-color 0%,$end-color 100%);
+ background: -ms-linear-gradient(top,  $start-color 0%,$end-color 100%);
+ background: linear-gradient(to bottom,  $start-color 0%,$end-color 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 );
+ }
+ @else if $orientation == horizontal
+ {
+ // horizontal
+ background: -moz-linear-gradient(left,  $start-color 0%, $end-color 100%);
+ background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
+ background: -webkit-linear-gradient(left,  $start-color 0%,$end-color 100%);
+ background: -o-linear-gradient(left,  $start-color 0%,$end-color 100%);
+ background: -ms-linear-gradient(left,  $start-color 0%,$end-color 100%);
+ background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+ }
+ @else
+ {
+ // radial
+ background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
+ background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
+ background: -webkit-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+ background: -o-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+ background: -ms-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+ background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+ }
+ }
+
+
+@mixin fixedHeight {
+  min-height: 500px !important;
+
+  @include medium {
+    min-height: 700px !important;
+  }
+}
+
+@mixin hover {
+ &:hover, &:active, &:focus {
+   @content;
+ }
+}
+
+@mixin hoverNoFocus {
+  &:hover, &:active {
+    @content;
+  }
+}
+
+@mixin enableGPU {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+}
+
+
+@mixin xsmall {
+  @media screen and #{breakpoint(xsmall)} {
+    @content;
+  }
+}
+@mixin medium {
+  @media screen and #{breakpoint(medium)} {
+    @content;
+  }
+}
+@mixin xmedium {
+  @media screen and #{breakpoint(xmedium)} {
+    @content;
+  }
+}
+@mixin large {
+  @media screen and #{breakpoint(large)} {
+    @content;
+  }
+}
+@mixin xlarge {
+  @media screen and #{breakpoint(xlarge)} {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media screen and (min-resolution: 2dppx){
+    @content;
+  }
+}
+
+@mixin IE11 {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin edge {
+  @supports (-ms-ime-align:auto) {
+    @content;
+  }
+}

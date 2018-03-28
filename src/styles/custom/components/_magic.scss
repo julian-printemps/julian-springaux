@@ -1,0 +1,98 @@
+.magic {
+  position: relative;
+  z-index: 10;
+  padding: rem-calc(40) rem-calc(20);
+  text-align: center;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
+
+  @include medium {
+  }
+
+  &--inner {
+    position: relative;
+    overflow: hidden;
+    background-color: $purple_01;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    @include setTransitionMedium;
+
+    .magic_90 & { @include setTransitionMedium; background-color: $blue_01; }
+    .magic_75 & { @include setTransitionMedium; background-color: $green-main; }
+    .magic_70 & { @include setTransitionMedium; background-color: $orange_01; }
+
+    & .icon {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: rem-calc(200);
+      height: rem-calc(200);
+    }
+  }
+
+  &--star {
+    position: absolute;
+    display: block;
+    @include setTransitionMedium;
+
+    &.first {
+      width: rem-calc(60); height: rem-calc(60);
+      top: 20%; left: 0;
+    }
+    &.second {
+      width: rem-calc(60); height: rem-calc(60);
+      bottom: 5%; left: 15%;
+    }
+    &.last  {
+      width: rem-calc(100); height: rem-calc(100);
+      top: 0; right: 10%;
+    }
+
+    .magic_90 & {
+      &.first {
+        width: rem-calc(70); height: rem-calc(70);
+        transform: rotate(-45deg);
+      }
+      &.second {
+        width: rem-calc(50); height: rem-calc(50);
+        transform: rotate(75deg);
+      }
+      &.last  {
+        width: rem-calc(80); height: rem-calc(80);
+        transform: rotate(-90deg);
+      }
+    }
+
+    .magic_75 & {
+      &.first {
+        width: rem-calc(60); height: rem-calc(60);
+        transform: rotate(60deg);
+      }
+      &.second {
+        width: rem-calc(70); height: rem-calc(70);
+        transform: rotate(-85deg);
+      }
+      &.last  {
+        width: rem-calc(90); height: rem-calc(90);
+        transform: rotate(15deg);
+      }
+    }
+
+    .magic_70 & {
+      &.first {
+        width: rem-calc(100); height: rem-calc(100);
+        transform: rotate(-130deg);
+      }
+      &.second {
+        width: rem-calc(60); height: rem-calc(60);
+        transform: rotate(105deg);
+      }
+      &.last  {
+        width: rem-calc(70); height: rem-calc(70);
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

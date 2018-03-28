@@ -1,0 +1,114 @@
+.info_article {
+  padding-top: rem-calc(20);
+  padding-bottom: rem-calc(20);
+
+  &--title {
+    @include fts(14,24);
+    margin: 0;
+    padding-top: rem-calc(10);
+    padding-bottom: rem-calc(10);
+    text-align: left;
+
+    @include medium {
+      @include fts(20,30);
+    }
+  }
+
+  &--icon {
+    fill: $gray_01;
+    width: 3rem;
+    height: 3rem;
+
+    @include medium {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    &--holder {
+      position: relative;
+
+      &.countries {
+        width: rem-calc(50);
+        height: rem-calc(50);
+      }
+
+      &.france {
+        width: rem-calc(50);
+        height: rem-calc(50);
+      }
+
+      @include medium {
+        &.countries {
+          width: rem-calc(80);
+          height: rem-calc(80);
+        }
+
+        &.france {
+          width: rem-calc(80);
+          height: rem-calc(80);
+        }
+      }
+    }
+
+    .countries & {
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+
+      @include medium {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      &.icon-switzerland {
+        top: 20%;
+        left: 0;
+        z-index: 100;
+      }
+      &.icon-japan {
+        bottom: 0;
+        right: 0;
+        z-index: 120;
+      }
+      &.icon-taiwan {
+        top: 0;
+        left: 50%;
+        z-index: 110;
+      }
+    }
+
+    .france & {
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+
+      @include medium {
+        width: 4rem;
+        height: 4rem;
+      }
+
+      &.icon-cheese {
+        top: rem-calc(8);
+        left: 0;
+        z-index: 100;
+      }
+      &.icon-glass {
+        top: 0;
+        right: rem-calc(-20);
+        z-index: 110;
+      }
+
+      @include medium {
+        &.icon-cheese {
+          top: rem-calc(10);
+          z-index: 100;
+        }
+        &.icon-glass {
+          top: 0;
+          right: rem-calc(-10);
+          z-index: 110;
+        }
+      }
+    }
+  }
+}

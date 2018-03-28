@@ -1,0 +1,182 @@
+.button {
+
+  &_more {
+    @extend .button;
+    position: relative;
+    padding: 1rem 4rem 1rem 1rem;
+    background-color: transparent;
+    color: $green-main;
+    @include fts(20,20);
+    text-transform: uppercase;
+
+    & .icon {
+      content: "";
+      position: absolute;
+      top: calc(50% - 15px);
+      right: 0;
+      display: block;
+      width: rem-calc(30);
+      height: rem-calc(30);
+      transform: rotate(45deg);
+      background-color: transparent;
+      border-right: 1px solid $green-main;
+      border-top: 1px solid $green-main;
+      @include setTransition;
+    }
+
+    &:focus {
+      background-color: transparent;
+      // color: inherit;
+      color: $green-main;
+    }
+
+    &:hover, &:active {
+      background-color: transparent;
+      color: $black;
+
+      & .icon {
+        border-color: $black;
+        right: -1rem;
+        @include setTransition;
+      }
+    }
+
+
+    &.back {
+      padding: 1rem 1rem 1rem 4rem;
+
+      & .icon {
+        left: 0;
+        right: initial;
+        border-right: none;
+        border-top: none;
+        border-left: 1px solid $green-main;
+        border-bottom: 1px solid $green-main;
+      }
+
+      &:hover, &:active {
+
+        & .icon {
+          left: -1rem;
+          right: initial;
+          border-color: $black;
+        }
+      }
+    }
+
+  }
+
+
+  // slider
+  &_slider {
+    @extend .button;
+    position: absolute;
+    z-index: 200;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    top: calc(50% - 20px);
+    right: 2rem;
+    padding: 0;
+    @include setTransition;
+
+    & span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    & .icon {
+      content: "";
+      position: absolute;
+      top: calc(50% - 15px);
+      left: calc(50% - 20px);
+      display: block;
+      width: rem-calc(30);
+      height: rem-calc(30);
+      transform: rotate(45deg);
+      background-color: transparent;
+      border-right: 2px solid $white;
+      border-top: 2px solid $white;
+    }
+
+    &:focus {
+      background-color: rgba(0,0,0,0.5);
+      color: $white;
+    }
+
+    &:hover, &:active {
+      background-color: rgba(0,0,0,0.8);
+      color: $black;
+      @include setTransition;
+    }
+
+
+    // prev
+    &.prev {
+      right: initial;
+      left: 2rem;
+
+      & .icon {
+        border-right: none;
+        border-top: none;
+        border-left: 2px solid $white;
+        border-bottom: 2px solid $white;
+        left: initial;
+        right: calc(50% - 24px);
+      }
+    }
+  }
+
+
+
+  // form submit
+  &_submit {
+    @extend .button;
+    position: relative;
+    padding: 1rem 4rem 1rem 1rem;
+    background-color: transparent;
+    color: $green-main;
+    @include fts(20,20);
+    text-transform: uppercase;
+    border: 1px solid $green-main;
+    @include setTransition;
+
+    & .icon {
+      fill: $green-main;
+      position: absolute;
+      top: calc(50% - 15px);
+      right: 1rem;
+      display: inline-block;
+      width: rem-calc(30);
+      height: rem-calc(30);
+      @include setTransition;
+    }
+
+    &:focus {
+      background-color: transparent;
+      color: $green-main;
+    }
+
+    &:hover, &:active {
+      background-color: transparent;
+      color: $black;
+      border-color: $black;
+      @include setTransition;
+
+      & .icon {
+        fill: $black;
+        @include setTransition;
+      }
+    }
+
+    &--holder {
+      margin-top: rem-calc(50);
+      text-align: center;
+    }
+  }
+
+
+}
