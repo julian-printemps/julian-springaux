@@ -33,22 +33,28 @@ export default {
       transitionName: 'slide-right',
       works: [
         { work: {
+          'title': 'Santouka',
+          'category': 'Nuxt',
+          'image': 'http://santouka-usa.com/img/ogp.png',
+          'url': 'https://santouka-usa.com/'
+        }},
+        { work: {
           'title': 'Junkichi',
-          'category': 'Vue.js',
+          'category': 'Nuxt',
           'image': './static/images/sites/junkichi.png',
           'url': 'https://junkichiusa.com/'
         }},
         { work: {
           'title': 'Pikejapan',
-          'category': 'Vue.js',
+          'category': 'Vue.js / Design',
           'image': './static/images/sites/pikejapan.jpg',
           'url': 'https://pikejapan.com/'
         }},
         { work: {
-          'title': 'Tabegamisama',
-          'category': 'Front-end',
-          'image': './static/images/sites/tabegamisama.png',
-          'url': 'https://tabegamisama.com/'
+          'title': 'Tekiten',
+          'category': 'Nuxt / SSR',
+          'image': 'https://tekiten.jp/img/ogp.jpg',
+          'url': 'https://tekiten.jp/'
         }},
         { work: {
           'title': 'Kirinzi',
@@ -57,28 +63,10 @@ export default {
           'url': 'http://kirinzi.jp/'
         }},
         { work: {
-          'title': 'Concrete',
-          'category': 'Wordpress / Front-end / Design',
-          'image': './static/images/sites/concrete.png',
-          'url': 'http://www.the-concrete.org/'
-        }},
-        { work: {
           'title': 'GrasPP',
           'category': 'Wordpress / Front-end',
           'image': './static/images/sites/graspp.png',
           'url': 'http://www.pp.u-tokyo.ac.jp/'
-        }},
-        { work: {
-          'title': 'Anthropoid',
-          'category': 'Wordpress / Front-end',
-          'image': './static/images/sites/anthropoid.jpg',
-          'url': 'http://shoot-heydrich.com/'
-        }},
-        { work: {
-          'title': 'R500',
-          'category': 'Wordpress / Front-end / Desgin',
-          'image': './static/images/sites/r500_logo.png',
-          'url': 'http://r500.co/'
         }}
       ]
     }

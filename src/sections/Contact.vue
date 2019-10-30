@@ -95,7 +95,8 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import axios from '@/services/axios'
 
 export default {
   name: 'contact-section',
@@ -146,11 +147,11 @@ export default {
         }
 
         if (message !== '' && name !== '' && email !== '') {
-          body = `Hi,\nMy name is ` + name + ` and I'd like to talk to you about ` + subjectMessage + `.\rYou can contact me at this address ` + email
-          if (phone !== '') { body += ` or at this number ` + phone } body += '\r\r' + message
+          body = `Hi,<br><br>My name is ` + name + ` and I'd like to talk to you about ` + subjectMessage + `.\rYou can contact me at this address <a href="mailto:` + email + `">` + email + `</a>`
+          if (phone !== '') { body += ` or at this number <a href="tel:` + phone + `">` + phone + `</a>` } body += '<br><br>' + message
         }
 
-        axios.post('https://murmuring-river-72491.herokuapp.com/api/email', {
+        axios.post('https://hidden-basin-66222.herokuapp.com/api/email', {
           name: name,
           email: email,
           subject: subjectMessage,
@@ -162,7 +163,7 @@ export default {
           }
         })
         .catch(e => {
-          this.errors.push(e)
+          console.log(e)
         })
       } else {
         console.log('Robot spotted!')

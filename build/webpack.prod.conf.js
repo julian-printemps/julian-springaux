@@ -9,7 +9,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
-const PrerenderSpaPlugin = require('prerender-spa-plugin')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -54,7 +55,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       cacheId: 'julian-cache',
       filename: 'service-worker.js',
       staticFileGlobs: ['dist/**/*.{js,html,css}'],
-      minify: true,
+      minify: false,
       stripPrefix: 'dist/'
     }),
     // generate dist index.html with correct asset hash for caching.
@@ -106,12 +107,19 @@ var webpackConfig = merge(baseWebpackConfig, {
     ]),
 
     // pre-render for bots
-    new PrerenderSpaPlugin(
-      // Absolute path to compiled SPA
-      path.join(__dirname, '../dist'),
-      // List of routes to prerender
-      [ '/' ]
-    )
+    new PrerenderSPAPlugin({
+        staticDir: path.join(__dirname, '../dist'),
+        indexPath: path.join(__dirname, '../dist/index.html'),
+        routes: [ '/' ],
+
+        renderer: new Renderer({
+            headless: false,
+            skipThirdPartyRequests: true,
+            renderAfterDocumentEvent: 'render-event',
+            // captureAfterTime: 5000,
+            pipe: true
+        })
+    }),
   ]
 })
 

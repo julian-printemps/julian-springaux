@@ -2,7 +2,7 @@
   <section class="header_video">
     <h1 class="header_video--title">
       <!-- <strong>Hi, I'm Julian</strong>I'm writing code in Tokyo. -->
-      <strong>Julian Springaux</strong>Front-end magician
+      <strong>Julian Springaux</strong>Front-end wizard
     </h1>
 
     <svg  xmlns="http://www.w3.org/2000/svg"  width="1920px" height="1080px" preserveAspectRatio="xMidYMid slice">
@@ -10,7 +10,6 @@
         <mask id="mask" x="0" y="0" width="100%" height="100%" >
           <rect x="0" y="0" width="100%" height="100%"/>
           <image xlink:href="../assets/images/logo-reverse.svg" x="20%" y="7%" height="65%" width="60%" />
-          <!-- <text x="50%" y="90%">Julian Springaux</text> -->
         </mask>
       </defs>
       <rect x="0" y="0" width="100%" height="100%"/>

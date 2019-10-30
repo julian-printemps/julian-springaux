@@ -76,17 +76,17 @@ export default {
       skills: [
         { skill: {
           'id': 1,
-          'title': 'Javacript, Ember.js, Vue.js',
+          'title': 'Javacript, Nuxt.js, Vue.js, Ember.js',
           'level': 75
         }},
         { skill: {
           'id': 2,
-          'title': 'HTML5, SCSS, Foundation, Bulma',
+          'title': 'HTML5, SCSS, Foundation, Bulma, Material Design',
           'level': 90
         }},
         { skill: {
           'id': 3,
-          'title': 'PHP, Wordpress',
+          'title': 'Firestore, AWS',
           'level': 80
         }},
         { skill: {
@@ -113,6 +113,12 @@ export default {
         }},
         { skill: {
           'title': 'Cordova'
+        }},
+        { skill: {
+          'title': 'Wordpress'
+        }},
+        { skill: {
+          'title': 'PHP'
         }},
         { skill: {
           'title': 'jQuery'

@@ -48,7 +48,7 @@ export default {
         }},
         { info: {
           'id': 3,
-          'title': 'Live in Japan, worked in Switzerland, travel to Taiwan',
+          'title': 'Live in Japan, worked in Switzerland, travel in Asia',
           'iconset': 'travel'
         }},
         { info: {
@@ -58,7 +58,7 @@ export default {
         }},
         { info: {
           'id': 5,
-          'title': '6 years of experience, in France, Switzerland and Japan',
+          'title': '7 years of experience, in France, Switzerland and Japan',
           'iconset': 'experience'
         }},
         { info: {

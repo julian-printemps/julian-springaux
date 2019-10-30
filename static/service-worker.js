@@ -1,20 +1,39 @@
-// "use strict";
+"use strict";
 
 console.log('WORKER: executing.');
 
 /* A version number is useful when updating the worker logic,
    allowing you to remove outdated cache entries during the update.
 */
-var version = 'v2::';
+var version = 'v1::';
 
 /* These resources will be downloaded and cached by the service worker
    during the installation process. If any resource fails to be downloaded,
    then the service worker won't be installed either.
 */
 var offlineFundamentals = [
-  'images/*',
-  'css/*',
-  'js/*'
+  '/index.html',
+  '/static/images/ogp.png',
+  '/static/images/oval.svg',
+  '/static/images/tokyo-2.jpg',
+  '/static/images/tokyo-small-origin.jpg',
+  '/static/images/tokyo-small.jpg',
+  '/static/images/tokyo.jpg',
+  '/static/images/sites/anthropoid.jpg',
+  '/static/images/sites/concrete.png',
+  '/static/images/sites/graspp.png',
+  '/static/images/sites/happy_hour.png',
+  '/static/images/sites/kirinzi.png',
+  '/static/images/sites/r500_logo.png',
+  '/static/images/sites/tabegamisama.png',
+  '/static/images/sites/pikejapan.jpg',
+  '/static/images/sites/junkichi.png',
+
+  '/static/css/app.57dafe52ab0f7e4ddd4a3a01dbf3d37d.css',
+
+  '/static/js/vendor.87d7dfe5ad9f663f7215.js',
+  '/static/js/manifest.1b161634c48dd745816f.js',
+  '/static/js/app.18c25a4815118e2af661.js',
 ];
 
 /* The install event fires when the service worker is first installed.
@@ -41,6 +60,7 @@ self.addEventListener("install", function(event) {
            The method below will add all resources in `offlineFundamentals` to the
            cache, after making requests for them.
         */
+        console.log('WORKER : caching');
         return cache.addAll(offlineFundamentals);
       })
       .then(function() {
