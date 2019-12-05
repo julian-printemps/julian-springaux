@@ -1,0 +1,80 @@
+// 37. Custom
+// -----------
+$break_xsmall: 0;
+$break_small: 600px;
+$break_medium: 960px;
+$break_large: 1264px;
+$break_xlarge: 1904px;
+
+/* Default colors ▼
+-------------------------------- */
+$white: #fff;
+$black: #000;
+
+$gray_01: #333333;
+$gray_02: #a3a3a3;
+
+$grey_01: #d1d1d1;
+$grey_02: #f1f1f1;
+
+$green-main: #41b883;
+$green-darker: darken($green-main,10);
+$green-lighter: lighten($green-main,35);
+
+$blue_01: #41a1b8;
+$orange_01: #dc5534;
+$purple_01: #9c41b8;
+
+$main_text: $gray_01;
+
+
+$magic_01: #41b883;
+$magic_02: #41a1b8;
+$magic_03: #dc5534;
+$magic_04: #9c41b8;
+$magic_05: #d19f42;
+$magic_06: #206e86;
+$magic_07: #285281;
+
+
+
+
+/* Theme setup ▼
+-------------------------------- */
+$theme_main: #222831;
+$theme_main-dark: darken($theme_main,25);
+$theme_main-alpha: rgba($theme_main,0.8);
+
+$theme_warning: #db8d1e;
+
+
+$text_main: $black;
+$text_alt: $theme_main;
+
+$body_background: $white;
+
+
+/* Brands ▼
+-------------------------------- */
+$facebook: #4267b2;
+$google: #ea4335;
+$twitter: #1da1f2;
+
+
+/* Theme setup ▼
+-------------------------------- */
+$global-font-size: 100%;
+
+
+/* Grid setup ▼
+-------------------------------- */
+$grid-margin-gutters: (
+    small: 12px,
+    medium: 12px
+);
+
+
+/* Fonts setup ▼
+-------------------------------- */
+$font-default: 'Noto Sans JP', 'Roboto', "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro",'メイリオ', Meiryo, '游ゴシック Medium', 'YuGothic Medium', '游ゴシック体', 'YuGothic', 'MS PGothic', 'ＭＳ Ｐゴシック', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-alt: 'Noto Sans JP', 'Roboto', "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro",'メイリオ', Meiryo, '游ゴシック Medium', 'YuGothic Medium', '游ゴシック体', 'YuGothic', 'MS PGothic', 'ＭＳ Ｐゴシック', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;

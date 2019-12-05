@@ -1,0 +1,21 @@
+$rem-base: 14px;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $rem-base: 14px)  {
+  $value: strip-unit($value) / strip-unit($rem-base) * 1rem;
+  @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+  @return $value;
+}
+
+@function rem-calc($values, $rem-base: 14px) {
+  $max: length($values);
+  @if $max == 1 { @return convert-to-rem(nth($values, 1), $rem-base); }
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $rem-base));
+  }
+  @return $remValues;
+}

@@ -1,0 +1,38 @@
+.header {
+  z-index: 1000;
+  background-color: $white;
+  border-bottom: 1px solid $green-lighter;
+  padding-top: 0;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+
+.nav {
+  position: relative;
+
+  & .menu {
+
+
+    & > li {
+      & > a {
+        @include fts(12,26);
+        padding: 1rem 0.8rem;
+        @include setTransition;
+        color: $green-main;
+
+        @include medium {
+          @include fts(16,20);
+          padding: 1rem 1.4rem;
+        }
+
+        &:hover, &:active {
+          color: $black;
+          @include setTransition;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+// Layout
+.small-shrink {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
+.small-auto {
+    -webkit-flex: 1 1 0px;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0px;
+}
+
+
+.medium-shrink {
+    @include medium {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto !important;
+        max-width: 100% !important;
+        width: auto !important;
+    }
+}
+
+.medium-auto {
+    @include medium {
+        -webkit-flex: 1 1 0px;
+        -ms-flex: 1 1 0px;
+        flex: 1 1 0px !important;
+    }
+}
+
+.large-shrink {
+    @include large {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        max-width: 100%;
+    }
+}
+
+.large-auto {
+    @include large {
+        -webkit-flex: 1 1 0px;
+        -ms-flex: 1 1 0px;
+        flex: 1 1 0px;
+    }
+}
+
+.self-right { margin-left: auto; }
+.self-left { margin-right: auto; }
+
+.flex {
+    @include medium {
+        &.md {
+            &shrink {
+                flex-basis: auto!important;
+                max-width: 100%!important;
+                flex-grow: 0!important;
+                flex-shrink: 1!important;
+            }
+            &grow {
+                flex-basis: auto!important;
+                max-width: 100%!important;
+                flex-shrink: 0!important;
+                flex-grow: 1!important;
+            }
+        }
+    }
+
+    @include large {
+        &.lg {
+            &shrink {
+                flex-basis: auto!important;
+                max-width: 100%!important;
+                flex-grow: 0!important;
+                flex-shrink: 1!important;
+            }
+            &grow {
+                flex-basis: auto!important;
+                max-width: 100%!important;
+                flex-shrink: 0!important;
+                flex-grow: 1!important;
+            }
+        }
+    }
+}
+
+
+// Visibility
+.seo {
+    position: absolute;
+    height: 0;
+    width: 0;
+    line-height: 0;
+    font-size: 0;
+    text-indent: -999%;
+}
